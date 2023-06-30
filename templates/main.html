@@ -1,0 +1,51 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Predictor</title>
+    <link rel="stylesheet" href="{% static '4/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="{% static '4/fonts/font-awesome.min.css' %}">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="Tropical_cyclone">TCIP</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"></li>
+                    <li class="nav-item nav-link"></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="Tropical_cyclone1">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image: url('static/4/img/cyclone.jpg');">
+        <div class="intro-body">
+            <form class="bg-light border rounded border-secondary shadow-lg" method="post" style="background: rgb(248,248,249);margin-bottom: -1px;padding-top: 0px;margin-right: 515px;padding-left: 0px;margin-left: 471px;padding-right: 0px;padding-bottom: 0px;">
+                {% csrf_token %}
+                <h2 class="text-center"><span style="color: rgb(0, 0, 0);">Enter data</span></h2>
+                <div class="form-group mb-3"><input class="form-control" type="number" step="any" name="lat" placeholder="Latitude"></div>
+                <div class="form-group mb-3"><input class="form-control" type="number" step="any" name="lon" placeholder="Longitude" inputmode="tel"></div>
+                <div class="form-group mb-3"><input class="form-control" type="number" step="any" name="ecp" placeholder="Estimated Central Pressure"></div><input class="form-control" type="number" step="any" name="mssw" placeholder="Maximum Sustained Wind Speed">
+                <div class="form-group mb-3" style="margin-top: 19px;"><input class="form-control" type="number" step="any" name="pd" placeholder="Pressure Drop"></div><input class="form-control" type="number" step="any" name="sst" placeholder="Sea Surface Temperature">
+                <div class="form-group mb-3"><button class="btn btn-primary" type="submit" style="margin-right: 0px;margin-left: 3px;">Predict</button></div>
+            </form>
+            {% if result %}             
+        <h1>result!!{{result}}</h1>
+
+    {% endif %}
+        </div>
+    </header>
+    <script src="static/4/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/4/js/grayscale.js"></script>
+</body>
+
+</html>

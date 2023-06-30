@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en" style="background-image: linear-gradient(to right, #9cecfb, #90e5fa, #85dff9, #7ad8f9, #70d1f8, #6ccef8, #68caf7, #65c7f7, #65c7f7, #65c7f7, #65c7f7, #65c7f7);">
+    {% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static '3/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '3/css/Pretty-Login-Form-.css' %}">
+</head>
+
+<body style="background-image: linear-gradient(to right, #9cecfb, #90e5fa, #85dff9, #7ad8f9, #70d1f8, #6ccef8, #68caf7, #65c7f7, #65c7f7, #65c7f7, #65c7f7, #65c7f7);">
+    <div class="row login-form">
+        <div class="col-md-4 offset-md-4" style="margin-top: 71px;">
+            <h2 class="text-center form-heading"><span style="color: rgb(0, 0, 0);">Signup</span></h2>
+            <form class="custom-form" style="background-color: #d7dde8;" method="POST">
+                <div class="form-group mb-3">
+					{% csrf_token %}
+					{{form.as_p}}	
+
+				</div><button class="btn btn-light d-block submit-button w-100" type="submit">Submit Form</button>
+            </form>
+        </div>
+    </div>
+    <script src="static/3/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

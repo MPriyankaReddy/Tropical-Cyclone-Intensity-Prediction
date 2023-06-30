@@ -1,0 +1,5 @@
+setup.py
+packageC45.egg-info/PKG-INFO
+packageC45.egg-info/SOURCES.txt
+packageC45.egg-info/dependency_links.txt
+packageC45.egg-info/top_level.txt
